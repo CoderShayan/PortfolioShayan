@@ -204,7 +204,7 @@ function Skills() {
     { title: "Programming", items: ["Python", "Java", "C", "C++"], span: "lg:col-span-4" },
     { title: "Web", items: ["HTML", "CSS", "JavaScript", "React"], span: "lg:col-span-4" },
     { title: "Database", items: ["SQLite", "Supabase", "PostgreSQL"], span: "lg:col-span-4" },
-    { title: "Tools", items: ["Git", "GitHub", "VS Code"], span: "lg:col-span-3" },
+    { title: "Tools", items: ["Git", "GitHub", "Figma", "VS Code"], span: "lg:col-span-4" },
     { title: "OS", items: ["Windows", "Linux (Ubuntu)"], span: "lg:col-span-3" },
     { title: "OOPs Concepts", items: ["Inheritance", "Encapsulation", "Polymorphism", "Abstraction"], span: "lg:col-span-6" },
   ];
