@@ -1,0 +1,110 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-ember: var(--ember);
+  --color-ember-soft: var(--ember-soft);
+  --color-rule: var(--rule);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 1rem;
+
+  --ink: #1a1a1a;
+  --surface: #1a1a1a;
+  --surface-2: #2d2d2d;
+  --surface-3: #4a4a4a;
+  --ember: #e85d3a;
+  --ember-soft: #ff7d5c;
+  --ink-soft: #b5b1ac;
+  --rule: rgba(255,255,255,0.08);
+
+  --background: var(--surface);
+  --foreground: #f5f2ee;
+  --card: var(--surface-2);
+  --card-foreground: #f5f2ee;
+  --popover: var(--surface-2);
+  --popover-foreground: #f5f2ee;
+  --primary: var(--ember);
+  --primary-foreground: #1a1a1a;
+  --secondary: var(--surface-3);
+  --secondary-foreground: #f5f2ee;
+  --muted: var(--surface-2);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--ember);
+  --accent-foreground: #1a1a1a;
+  --destructive: var(--ember);
+  --destructive-foreground: #f5f2ee;
+  --border: var(--rule);
+  --input: rgba(255,255,255,0.12);
+  --ring: var(--ember);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--surface);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--ember); color: #1a1a1a; }
+}
+
+@utility font-display { font-family: var(--font-display); letter-spacing: -0.02em; }
+@utility font-mono-ed { font-family: var(--font-mono); }
+
+@utility bento-card {
+  background: #262626;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset, 0 20px 40px -28px rgba(0,0,0,0.6);
+  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+@utility bento-card-hover {
+  &:hover { transform: translateY(-2px); border-color: rgba(232,93,58,0.35); box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset, 0 28px 50px -28px rgba(0,0,0,0.7); }
+}
+@utility ember-glow {
+  background: #2d2d2d;
+  border: 1px solid rgba(232,93,58,0.35);
+  border-radius: var(--radius);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@utility marquee-track { animation: marquee 38s linear infinite; }
